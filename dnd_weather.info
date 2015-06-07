@@ -1,0 +1,3 @@
+name = DnD weather Generator
+description = A heavily modified version of the WSG
+core = 7.x

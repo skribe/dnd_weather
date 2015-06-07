@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * A block module that generates weather for DnD.
+ */
+
+
+
+/**
+ * Implements hook_help().
+ *
+ * Displays help and module information.
+ *
+ * @param path 
+ *   Which path of the site we're using to display help
+ * @param arg 
+ *   Array that holds the current path as returned from arg() function
+ */
+function dnd_weather_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#dnd_weather":
+      return '<p>' . t("Generates weather for DnD") . '</p>';
+      break;
+  }
+} 
+
+/**
+ * Implements hook_block_info().
+ */
+function dnd_weather_block_info() {
+  $blocks['dnd_weather'] = array(
+    // The name that will appear in the block list.
+    'info' => t('DnD Weather Gen'),
+    // Default setting.
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+  return $blocks;
+}
